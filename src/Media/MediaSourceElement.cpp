@@ -320,6 +320,12 @@ void MediaSourceElement::SetupPins()
 							info->Format = AudioFormatEnum::PcmS24LE;
 						break;
 
+					case AV_CODEC_ID_PCM_S16LE:
+						printf("stream #%d - AUDIO/PCM_S16LE\n", i);
+						if (info)
+							info->Format = AudioFormatEnum::PcmS16LE;
+						break;
+
 					default:
 						printf("stream #%d - AUDIO/UNKNOWN (0x%x)\n", i, codec_id);
 						//throw NotSupportedException();
